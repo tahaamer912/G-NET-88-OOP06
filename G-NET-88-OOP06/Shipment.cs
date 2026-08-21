@@ -2,7 +2,7 @@ using System;
 
 namespace G_NET_88_OOP05
 {
-    internal abstract class Shipment : ITrackable, IInsurable
+    internal abstract partial class Shipment : ITrackable, IInsurable
     {
         #region Static Fields & Constructor & Methods
 
@@ -70,8 +70,6 @@ namespace G_NET_88_OOP05
         }
 
         public abstract decimal EstimatedCost { get; }
-
-        public string Status { get; set; } = "Ready";
 
         #endregion
 
@@ -143,13 +141,6 @@ namespace G_NET_88_OOP05
 
             if (totalWeight > 0)
                 Weight = totalWeight;
-        }
-
-        public abstract string GetTrackingStatus();
-
-        public void UpdateTrackingStatus(string newStatus)
-        {
-            Status = newStatus;
         }
 
         public abstract void PrintShipment();
