@@ -14,6 +14,11 @@ namespace G_NET_88_OOP05
             Console.WriteLine("Shipment System Initialized");
         }
 
+        public static int GetTotalShipmentsCreated()
+        {
+            return TotalShipmentsCreated;
+        }
+
         #endregion
 
         #region Private Fields
