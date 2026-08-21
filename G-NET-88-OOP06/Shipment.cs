@@ -81,6 +81,15 @@ namespace G_NET_88_OOP05
 
         #endregion
 
+        #region Object Copying Methods
+
+        public Shipment CopyShipment()
+        {
+            return (Shipment)this.MemberwiseClone();
+        }
+
+        #endregion
+
         #region Methods
 
         public void UpdateDeliveryFee(decimal newFee)
