@@ -13,6 +13,18 @@ namespace G_NET_88_OOP05
         public void UpdateTrackingStatus(string newStatus)
         {
             Status = newStatus;
+            OnTrackingStatusChanged(newStatus);
+        }
+
+        #endregion
+
+        #region Partial Methods
+
+        partial void OnTrackingStatusChanged(string newStatus);
+
+        partial void OnTrackingStatusChanged(string newStatus)
+        {
+            Console.WriteLine($"Tracking status changed to: {newStatus}");
         }
 
         #endregion
