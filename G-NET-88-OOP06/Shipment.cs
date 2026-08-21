@@ -85,12 +85,22 @@ namespace G_NET_88_OOP05
 
         public Shipment CopyShipment()
         {
-            return ShallowCopy();
+            return DeepCopy();
         }
 
         public Shipment ShallowCopy()
         {
             return (Shipment)this.MemberwiseClone();
+        }
+
+        public Shipment DeepCopy()
+        {
+            Shipment copy = (Shipment)this.MemberwiseClone();
+            if (this.Destination != null)
+            {
+                copy.Destination = new DeliveryAddress(this.Destination);
+            }
+            return copy;
         }
 
         #endregion

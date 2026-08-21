@@ -19,6 +19,13 @@ namespace G_NET_88_OOP05
             BuildingNumber = buildingNumber;
         }
 
+        public DeliveryAddress(DeliveryAddress existing)
+        {
+            City = existing?.City ?? string.Empty;
+            Street = existing?.Street ?? string.Empty;
+            BuildingNumber = existing?.BuildingNumber ?? 0;
+        }
+
         #endregion
 
         #region Methods
