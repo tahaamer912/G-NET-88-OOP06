@@ -4,6 +4,12 @@ namespace G_NET_88_OOP05
 {
     internal abstract class Shipment : ITrackable, IInsurable
     {
+        #region Static Fields & Constructor & Methods
+
+        public static int TotalShipmentsCreated { get; private set; }
+
+        #endregion
+
         #region Private Fields
 
         private string trackingCode;
@@ -71,6 +77,7 @@ namespace G_NET_88_OOP05
                         decimal deliveryFee,
                         DeliveryAddress destination)
         {
+            TotalShipmentsCreated++;
             this.trackingCode = !string.IsNullOrWhiteSpace(trackingCode) ? trackingCode : "TRK000";
 
             Description = description;
