@@ -85,6 +85,11 @@ namespace G_NET_88_OOP05
 
         public Shipment CopyShipment()
         {
+            return ShallowCopy();
+        }
+
+        public Shipment ShallowCopy()
+        {
             return (Shipment)this.MemberwiseClone();
         }
 
